@@ -1,0 +1,117 @@
+html, body{
+    background-color: #7BC4D3;
+    font-family: 'PT Sans', sans-serif;
+}
+header{
+    display: flex;
+}
+.lholder{
+    float: left;
+    display: inline-block;
+    width: 20%;
+}
+.lholder img{
+    margin: 10% 40%;
+    width: 45%;
+    display: block;
+}
+.title-holder{
+    background-color: #fff;
+    display: inline-block;
+    width: 60%;
+}
+.title{
+    padding: 2.5% 0;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 40%;
+}
+.content-layout{
+    width:100%;
+}
+
+.iholder{
+    width: 20%;
+    height: auto;
+    display: inline-block;
+    padding-top: 5%;
+}
+img{
+    width: 90%;
+    margin: 0 auto;
+}
+.description{
+    background-color: #fff;
+    display: inline-block;
+    width:60%;
+    font-size: 125%;
+    padding: 3%;
+    margin: 0 auto;
+}
+a{
+    color: black;
+    transition: color;
+}
+a:hover{
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -ms-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    color: #000;
+}
+ul {
+    /*margin: 0;*/
+}
+ul.dashed {
+    list-style-type: none;
+}
+ul.dashed > li {
+    text-indent: -5px;
+}
+ul.dashed > li:before {
+    content: "-";
+    text-indent: -5px;
+}
+.faq h2{
+    /*padding-left: 25%;*/
+    text-align: center;
+}
+.faq{
+    padding: 5% 3% 3%;
+    background-color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 130%;
+}
+ol li{
+    font-weight: bold;
+    font-size:110%;
+}
+.answer{
+    font-weight: normal;
+    font-size: 100%;
+}
+.share-buttons {
+    width: 30%;
+    margin: 0 auto;
+    position: relative;
+    height: 10px;
+    padding: 20px;
+}
+.share-buttons .social-button {
+    display: inline-block;
+}
+.social-button {
+    background-color: ;
+    position: absolute;
+}
+.twttr-share-button {
+    right: 0;
+}
+.vkontakte-share-button {
+    left: 40%;
+}
+.facebook-share-button {
+    left: 0;
+}
