@@ -150,7 +150,11 @@ ol li{
 .icon{
     padding-top:25%;
 }
-
+.kowo{
+    padding-top: 15%;
+    width: 20px;
+    height: auto;
+}
 .share-links-layout{
     width: 100%;
     margin: 0 auto;
