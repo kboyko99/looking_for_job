@@ -166,7 +166,7 @@ ol li{
 }
 .share-buttons {
     width: auto;
-    max-width:39%;
+    max-width: 270px;
     margin: 0 auto;
     position: relative;
     height: 10px;
@@ -179,12 +179,25 @@ ol li{
 }
 .mobile{
     display: none;
+
+}
+
+@media all and (max-width: 800px){
+    #faq-image{
+        padding-top: 125vh;
+    }
+
 }
 @media all and (max-width: 720px){
     .mobile{
         display: block;
-        width:40%;
-        margin: 0 auto;
+        width:100%;
+        margin: 2% auto 0;
+    }
+    .icon{
+        padding-top: 15%}
+    .kowo{
+        padding-top:5%;
     }
     .container-main{
         width: 100%;

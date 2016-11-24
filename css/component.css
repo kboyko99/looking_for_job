@@ -1,6 +1,5 @@
 .hi-icon-wrap {
 	text-align: center;
-	margin: 3% auto;
 	padding: 0 0 0;
 }
 
@@ -700,4 +699,20 @@
 .hi-icon-effect-9b .hi-icon:hover {
 	box-shadow: 0 0 0 10px rgba(255,255,255,0.4);
 	color: #fff;
+}
+
+@media all and (max-width: 800px){
+	.hi-icon{
+		width: 2vw;
+		height: 2vw;
+	}
+	.icon{
+		padding-top: 0;
+	}
+}
+@media all and (max-width: 720px){
+	.hi-icon{
+		width: 5vw;
+		height: 5vw;
+	}
 }
