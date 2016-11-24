@@ -140,14 +140,15 @@ ol li{
 .social-links{
     bottom: 0px;
     margin:0 auto;
-    width:90%;
+    width:95%;
     color: #fff;
 }
 .social-link {
-    padding: 3vh 0vw;
     text-decoration: none;
     color: white;
-    margin-left: 5px;
+}
+.icon{
+    padding-top:25%;
 }
 
 .share-links-layout{
@@ -172,9 +173,17 @@ ol li{
     padding-left: 1%;
     display: inline-block;
 }
+.mobile{
+    display: none;
+}
 @media all and (max-width: 720px){
+    .mobile{
+        display: block;
+        width:40%;
+        margin: 0 auto;
+    }
     .container-main{
-        width: 95%;
+        width: 100%;
         margin: 0 auto;
         float: none;
     }
@@ -190,3 +199,4 @@ ol li{
         display: none;
     }
 }
+
