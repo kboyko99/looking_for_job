@@ -8,8 +8,8 @@
 	font-size: 15px;
 	cursor: pointer;
 	margin: 0 1%;
-	width: 2.3vw;
-	height: 2.3vw;
+	width: 2.1vw;
+	height: 2.1vw;
 	border-radius: 50%;
 	vertical-align: middle;
 	text-align: center;
@@ -701,18 +701,42 @@
 	color: #fff;
 }
 
-@media all and (max-width: 800px){
-	.hi-icon{
-		width: 2vw;
-		height: 2vw;
+@media all and (max-width: 1000px){
+	.hi-icon-wrap{
+		margin-top: 10%;
 	}
-	.icon{
-		padding-top: 0;
+    .hi-icon{
+        margin-top:10%;
+        width: 5vw;
+        height: 5vw;
+        font-size: 130%;
+    }
+	.kowo{
+		width: 30px;
 	}
 }
 @media all and (max-width: 720px){
+    .hi-icon-wrap{
+        margin: 2% auto;
+    }
+	.icon{
+		padding-top: 0;
+	}
 	.hi-icon{
-		width: 5vw;
-		height: 5vw;
+        margin: 1%;
+        padding: 0;
+	}
+}
+@media all and (max-width: 600px){
+	.icon{
+		margin-top: -5px;
+	}
+}
+@media all {
+	.hi-icon{
+		font-size: 115%;
+	}
+	.kowo{
+		width: 25px;
 	}
 }

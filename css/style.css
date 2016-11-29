@@ -12,7 +12,7 @@ html, body{
     width: 59vw;
     display: inline-block;
     background-color: white;
-    border-radius: 1em !important;
+    border-radius: 1em;
     -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
     -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
@@ -103,6 +103,9 @@ a:hover{
     transition-duration: 0.2s;
     color: #000;
 }
+h4{
+    text-align: center;
+}
 ul {
     /*margin: 0;*/
 }
@@ -117,7 +120,7 @@ ul.dashed > li:before {
     text-indent: -5px;
 }
 #faq-image{
-    padding-top: 300%;
+    padding-top: 50vw;
 }
 .faq h2{
     text-align: center;
@@ -127,11 +130,11 @@ ul.dashed > li:before {
     background-color: transparent;
     width: 94%;
     margin: -1% auto;
-    font-size: 130%;
+    font-size: 125%;
 }
 ol li{
     font-weight: bold;
-    font-size:110%;
+    font-size:100%;
 }
 .answer{
     font-weight: normal;
@@ -148,10 +151,10 @@ ol li{
     color: white;
 }
 .icon{
-    padding-top:25%;
+    padding-top:10%;
+    vertical-align: middle;
 }
 .kowo{
-    padding-top: 15%;
     width: 20px;
     height: auto;
 }
