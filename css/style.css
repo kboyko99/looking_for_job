@@ -4,7 +4,7 @@ html, body{
 }
 .container-left{
     position: relative;
-    width: 19vw;
+    width: 17vw;
     float: left;
     display: inline-block;
 }
