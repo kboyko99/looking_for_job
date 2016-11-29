@@ -13,9 +13,9 @@ html, body{
     display: inline-block;
     background-color: white;
     border-radius: 1em;
-    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
-    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
-    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
 }
 .container-right{
     width: 19vw;
@@ -141,7 +141,7 @@ ol li{
     font-size: 100%;
 }
 .social-links{
-    bottom: 0px;
+    bottom: 0;
     margin:0 auto;
     width:95%;
     color: #fff;
@@ -151,12 +151,15 @@ ol li{
     color: white;
 }
 .icon{
-    padding-top:10%;
+    padding-top: 10%;
     vertical-align: middle;
 }
 .kowo{
+    background: url("../images/icons/kowo-icon-blue.png") no-repeat 100% 0;
+    background-size: cover;
     width: 20px;
-    height: auto;
+    height: 20px;
+    margin: 5% 20%;
 }
 .share-links-layout{
     width: 100%;
@@ -184,7 +187,11 @@ ol li{
     display: none;
 
 }
-
+@media all and  (max-width: 1020px){
+    .icon{
+        padding-top: 0;
+    }
+}
 @media all and (max-width: 800px){
     #faq-image{
         padding-top: 125vh;
@@ -199,9 +206,7 @@ ol li{
     }
     .icon{
         padding-top: 15%}
-    .kowo{
-        padding-top:5%;
-    }
+
     .container-main{
         width: 100%;
         margin: 0 auto;

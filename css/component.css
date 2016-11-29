@@ -121,16 +121,18 @@
 
 /* Effect 2a */
 .hi-icon-effect-2a .hi-icon:hover {
-	color: #7BC4D3;
+	color: #ffffff;
 }
 
 .hi-icon-effect-2a .hi-icon:hover:after {
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	-ms-transform: scale(0.6);
-	transform: scale(0.6);
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
 }
-
+.hi-icon-effect-2a .hi-icon .kowo:hover{
+	background-image: url("../images/icons/kowo-icon-white.png");
+}
 /* Effect 2b */
 .hi-icon-effect-2b .hi-icon:hover:after {
 	-webkit-transform: scale(0);
@@ -713,6 +715,9 @@
     }
 	.kowo{
 		width: 30px;
+		height: 30px;
+		margin: 3% 17%;
+		background-size: cover;
 	}
 }
 @media all and (max-width: 720px){
@@ -726,17 +731,22 @@
         margin: 1%;
         padding: 0;
 	}
+	.kowo{
+		padding-top:5%;
+		margin: 3% 10%;
+	}
 }
 @media all and (max-width: 600px){
 	.icon{
 		margin-top: -5px;
 	}
 }
-@media all {
+@media all and(max-width: 500px){
 	.hi-icon{
 		font-size: 115%;
 	}
 	.kowo{
 		width: 25px;
+		height: 25px;
 	}
 }
