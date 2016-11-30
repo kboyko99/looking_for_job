@@ -31,7 +31,7 @@ $uploadTempFile = $_FILES['image']['tmp_name'];
 
 if (isset($name) && isset($description) && isset($uploadTempFile)) {
     $partner = array(
-        'id' => $partnersLength,
+        'id' => (new DateTime())->getTimestamp(),
         'name' => transliterate($name),
         'description' => $description
     );
@@ -59,11 +59,14 @@ if (isset($name) && isset($description) && isset($uploadTempFile)) {
 
     imagecopyresampled( $targetImage, $srcImage, 0, 0, 0, 0, $newWidth, $newHeight, $uploadWidth, $uploadHeight);
 
+    if (!file_exists('../images/partners/')) {
+        mkdir('../images/partners/', 0777, true);
+    }
     if ($uploadType == 2) {
-        $filePath = '../../images/' . transliterate($name) . '.jpg';
+        $filePath = '../images/partners/' . transliterate($name) . '.jpg';
         imagejpeg($targetImage, $filePath , 90);
     } else if ($uploadType == 3) {
-        $filePath = '../../images/' . transliterate($name) . '.png';
+        $filePath = '../images/partners/' . transliterate($name) . '.png';
         imagepng($targetImage, $filePath , 9 );
     }
 
