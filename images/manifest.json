@@ -1,12 +1,12 @@
 {
-  "name": "Looking for job",
-  "short_name": "Looking for job",
-  "display": "standalone",
-  "background_color": "#7BC4D3",
-  "description": "Service helping people, who are looking for job",
+ "name": "Looking for job",
+ "short_name": "Looking for job",
+ "display": "standalone",
+ "background_color": "#7BC4D3",
+ "description": "Service helping people, who are looking for job",
  "dir": "ltr",
  "lang": "ru_RU",
- ​​"orientation": "landscape-primary",
+ "orientation": "landscape-primary",
  "theme_color": "#7BC4D3",
  "icons": [
   {

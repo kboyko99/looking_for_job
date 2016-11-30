@@ -4,7 +4,7 @@ html, body{
 }
 .container-left{
     position: relative;
-    width: 19vw;
+    width: 17vw;
     float: left;
     display: inline-block;
 }
@@ -12,13 +12,13 @@ html, body{
     width: 59vw;
     display: inline-block;
     background-color: white;
-    border-radius: 1em !important;
-    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
-    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
-    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.6);
+    border-radius: 1em;
+    -webkit-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
 }
 .container-right{
-    width: 19vw;
+    width: 18vw;
     float: right;
     display: inline-block;
 }
@@ -103,6 +103,9 @@ a:hover{
     transition-duration: 0.2s;
     color: #000;
 }
+h4{
+    text-align: center;
+}
 ul {
     /*margin: 0;*/
 }
@@ -117,7 +120,7 @@ ul.dashed > li:before {
     text-indent: -5px;
 }
 #faq-image{
-    padding-top: 300%;
+    padding-top: 50vw;
 }
 .faq h2{
     text-align: center;
@@ -127,18 +130,18 @@ ul.dashed > li:before {
     background-color: transparent;
     width: 94%;
     margin: -1% auto;
-    font-size: 130%;
+    font-size: 125%;
 }
 ol li{
     font-weight: bold;
-    font-size:110%;
+    font-size:100%;
 }
 .answer{
     font-weight: normal;
     font-size: 100%;
 }
 .social-links{
-    bottom: 0px;
+    bottom: 0;
     margin:0 auto;
     width:95%;
     color: #fff;
@@ -148,12 +151,15 @@ ol li{
     color: white;
 }
 .icon{
-    padding-top:25%;
+    padding-top: 10%;
+    vertical-align: middle;
 }
 .kowo{
-    padding-top: 15%;
+    background: url("../images/icons/kowo-icon-blue.png") no-repeat 100% 0;
+    background-size: cover;
     width: 20px;
-    height: auto;
+    height: 20px;
+    margin: 5% 20%;
 }
 .share-links-layout{
     width: 100%;
@@ -181,7 +187,11 @@ ol li{
     display: none;
 
 }
-
+@media all and  (max-width: 1020px){
+    .icon{
+        padding-top: 0;
+    }
+}
 @media all and (max-width: 800px){
     #faq-image{
         padding-top: 125vh;
@@ -196,9 +206,7 @@ ol li{
     }
     .icon{
         padding-top: 15%}
-    .kowo{
-        padding-top:5%;
-    }
+
     .container-main{
         width: 100%;
         margin: 0 auto;
