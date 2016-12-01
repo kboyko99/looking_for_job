@@ -22,64 +22,76 @@ function transliterate($string)
     }
 }
 
-$partnersJSON = file_get_contents('partners.json');
-$partnersObj = json_decode($partnersJSON, true);
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
-$name = $_POST['name'];
-$description = $_POST['description'];
-$uploadTempFile = $_FILES['image']['tmp_name'];
+$partnersJSON = $partnersObj = $name = $description = $uploadTempFile = "";
 
-if (isset($name) && isset($description) && isset($uploadTempFile)) {
-    $partner = array(
-        'id' => (new DateTime())->getTimestamp(),
-        'name' => transliterate($name),
-        'description' => $description
-    );
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $partnersJSON = file_get_contents('partners.json');
+    $partnersObj = json_decode($partnersJSON, true);
 
-    list( $uploadWidth, $uploadHeight, $uploadType ) = getimagesize( $uploadTempFile );
+    $name = test_input($_POST['name']);
+    $description = test_input($_POST['description']);
+    $uploadTempFile = $_FILES['image']['tmp_name'];
 
-    $aspectRatio = $uploadWidth / $uploadHeight;
-    if ($aspectRatio > 1) {
-        $newWidth = 200;
-        $newHeight = $newWidth / $aspectRatio;
-    } else {
-        $newHeight = 200;
-        $newWidth = $newHeight * $aspectRatio;
+    if (isset($name) && isset($description) && isset($uploadTempFile)) {
+        $partner = array(
+            'id' => (new DateTime())->getTimestamp(),
+            'name' => transliterate($name),
+            'description' => $description
+        );
+
+        list($uploadWidth, $uploadHeight, $uploadType) = getimagesize($uploadTempFile);
+
+        $aspectRatio = $uploadWidth / $uploadHeight;
+        if ($aspectRatio > 1) {
+            $newWidth = 200;
+            $newHeight = $newWidth / $aspectRatio;
+        } else {
+            $newHeight = 200;
+            $newWidth = $newHeight * $aspectRatio;
+        }
+
+        if ($uploadType == 2) {
+            $srcImage = imagecreatefromjpeg($uploadTempFile);
+        } else if ($uploadType == 3) {
+            $srcImage = imagecreatefrompng($uploadTempFile);
+        }
+
+        $targetImage = imagecreatetruecolor($newWidth, $newHeight);
+        imagealphablending($targetImage, false);
+        imagesavealpha($targetImage, true);
+
+        imagecopyresampled($targetImage, $srcImage, 0, 0, 0, 0, $newWidth, $newHeight, $uploadWidth, $uploadHeight);
+
+        if (!file_exists('../images/partners/')) {
+            mkdir('../images/partners/', 0777, true);
+        }
+        if ($uploadType == 2) {
+            $filePath = '../images/partners/' . transliterate($name) . '.jpg';
+            imagejpeg($targetImage, $filePath, 90);
+        } else if ($uploadType == 3) {
+            $filePath = '../images/partners/' . transliterate($name) . '.png';
+            imagepng($targetImage, $filePath, 9);
+        }
+
+        $partner["imageLink"] = $filePath;
+        $partner["hidden"] = isset($_POST["hidden"]) ? "1" : "0";
+        $date = new DateTime();
+        $partner["createdAt"] = $date->getTimestamp();
+        $partner["updatedAt"] = "";
+        $partnersObj["partners"][] = $partner;
+        $partnersEncoded = json_encode($partnersObj);
+        imagedestroy($srcImage);
+        file_put_contents("partners.json", $partnersEncoded);
+        header('Location: ../admin?ok=ok');
+        exit();
     }
-
-    if ($uploadType == 2) {
-        $srcImage = imagecreatefromjpeg($uploadTempFile);
-    } else if ($uploadType == 3) {
-        $srcImage = imagecreatefrompng($uploadTempFile);
-    }
-
-    $targetImage = imagecreatetruecolor($newWidth, $newHeight);
-    imagealphablending( $targetImage, false );
-    imagesavealpha( $targetImage, true );
-
-    imagecopyresampled( $targetImage, $srcImage, 0, 0, 0, 0, $newWidth, $newHeight, $uploadWidth, $uploadHeight);
-
-    if (!file_exists('../images/partners/')) {
-        mkdir('../images/partners/', 0777, true);
-    }
-    if ($uploadType == 2) {
-        $filePath = '../images/partners/' . transliterate($name) . '.jpg';
-        imagejpeg($targetImage, $filePath , 90);
-    } else if ($uploadType == 3) {
-        $filePath = '../images/partners/' . transliterate($name) . '.png';
-        imagepng($targetImage, $filePath , 9 );
-    }
-
-    $partner["imageLink"] = $filePath;
-    $partner["hidden"] = isset($_POST["hidden"]) ? "1" : "0";
-    $date = new DateTime();
-    $partner["createdAt"] = $date->getTimestamp();
-    $partner["updatedAt"] = "";
-    $partnersObj["partners"][] = $partner;
-    $partnersEncoded = json_encode($partnersObj);
-    imagedestroy($srcImage);
-    file_put_contents("partners.json", $partnersEncoded);
-    header('Location: ../admin?ok=ok');
-    exit();
 }
 ?>

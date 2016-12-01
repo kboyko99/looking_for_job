@@ -1,4 +1,4 @@
-K<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Form</title>
