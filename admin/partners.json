@@ -1,0 +1,22 @@
+{
+  "partners":[
+    {
+      "id":1480955684,
+      "name":"me",
+      "description":"cool",
+      "imageLink":"..\/images\/partners\/me.jpg",
+      "hidden":"0",
+      "createdAt":1480955684,
+      "updatedAt":""
+    },
+    {
+      "id":1480955710,
+      "name":"two",
+      "description":"cool",
+      "imageLink":"..\/images\/partners\/two.jpg",
+      "hidden":"1",
+      "createdAt":1480955711,
+      "updatedAt":""
+    }
+  ]
+}

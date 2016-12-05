@@ -1,0 +1,43 @@
+html, body{
+    background-color: #7BC4D3;
+    font-family: 'PT Sans', sans-serif;
+}
+.container-left{
+    position: relative;
+    width: 20vw;
+    height: 20vh;
+    float: left;
+    display: inline-block;
+}
+.container-main{
+    width: 60vw;
+    display: inline-block;
+    background-color: white;
+    border-radius: 1em;
+    -webkit-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.6);
+}
+.container-right{
+    width: 20vw;
+    height: 20vh;
+    float: right;
+    display: inline-block;
+}
+.partner{
+    display: inline-block;
+    width: 45%;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+}
+.partnerName{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.title{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 200%;
+}
