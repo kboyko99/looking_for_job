@@ -6,9 +6,9 @@
     <meta property="og:description"
           content="Service helping people, who are looking for job" />
     <meta property="og:locale" content="ru_RU" />
-    <meta property="og:url" content="this.url" />
+    <meta property="og:url" content="http://kowo.me/looking-4-job/" />
     <meta property="og:site_name" content="Looking For Job" />
-    <meta property="og:image" content="this.url/images/logo.png" />
+    <meta property="og:image" content="http://kowo.me/looking-4-job//images/logo.png" />
     <meta name="theme-color" content="#7BC4D3">
     <title>Looking For Job</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
     <link rel="stylesheet" href="css/style.css">
@@ -34,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <body>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -98,7 +99,7 @@
         <ol>
             <li>
                 <div class="question">У кого есть доступ к базе данных кандидатов?</div>
-                <div class="answer">Доступ к базе данных имеют представители компаний-партнеров. Со списком партнеров вы можете ознакомиться<a href="partners/" target="_blank"> ~здесь~ </a></div>
+                <div class="answer">Доступ к базе данных имеют представители компаний-партнеров. Со списком партнеров вы можете ознакомиться<a href="#partners" target=""> ~здесь~ </a></div>
             </li>
             <li>
                 <div class="question">Как скоро я получу предложение о работе?</div>
@@ -110,6 +111,9 @@
             </li>
         </ol>
     </div>
+</div>
+<div class="partners-layout" id="partners">
+
 </div>
 <div class="share-links-layout">
         <div class="Head">Поделитесь с друзьями</div>
@@ -178,6 +182,28 @@
         <i class="icon fa fa-envelope-o" aria-hidden="true"></i>
     </a>
 </div>
+<script>
+    $.getJSON( "admin/partners.json", function( data ) {
+        var items = data["partners"];
+        var partners = [];
+        if(items.length>0)
+            partners.push("<h2 class='partners_title'>Наші партнери</h2>");
+        for(var i = 0; i<items.length; i++){
+            var name = items[i]["name"];
+            var description = items[i]["description"];
+            var image_path = items[i]["imageLink"];
+            partners.push( "<div class='partner'>"
+                + "<div class = 'partnerName'>"+name+"</div>"
+                + "<div class='partnerDescription'>"+description+"</div>"
+                + "<img class='partnerImg' src='"+image_path.slice(3)+"'>"
+                + "</div>" );
+        }
+        $( "<div/>", {
+            "class": "partners-block" ,
+            html: partners.join( "" )
+        }).appendTo( ".partners-layout" );
+    });
+</script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter38961835 = new Ya.Metrika({ id:38961835, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/38961835" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->

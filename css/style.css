@@ -83,7 +83,7 @@ header{
     width: 90%;
     margin: 0 auto;
 }
-.description{
+.description, .partners-layout{
     background-color: #fff;
     display: inline-block;
     width:94%;
@@ -139,6 +139,26 @@ ol li{
 .answer{
     font-weight: normal;
     font-size: 100%;
+}
+.partners_title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.partner{
+    display: inline-block;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+.partnerName, .partnerDescription{
+    font-size: 90%;
+}
+.partnerName{
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.partnerImg{
+    width: 100%;
 }
 .social-links{
     bottom: 0;
@@ -218,10 +238,15 @@ ol li{
         width: 94%;
     }
     .lholder img{
-        padding-top: 10%;
+        max-width: 40px;
     }
     .container-left, .container-right{
         display: none;
     }
 }
-
+@media all and (max-width: 460px){
+    .lholder img{
+        padding-top: 10%;
+        min-width: 36px;
+    }
+}
