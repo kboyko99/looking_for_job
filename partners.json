@@ -1,0 +1,34 @@
+{
+  "partners": [
+    {
+      "title": "KOWO",
+      "image": "/partners/kowo.png",
+      "url": "http://kowo.me"
+    },
+    {
+      "title": "Onix",
+      "image": "/partners/onix.png",
+      "url": "http://www.onix.ua/"
+    },
+    {
+      "title": "200x300",
+      "image": "/partners/200x300.png",
+      "url": "http://200x300.com"
+    },
+    {
+      "title": "Banda pixels",
+      "image": "/partners/banda.png",
+      "url": "http://bandapixels.com/"
+    },
+    {
+      "title": "KinectPRO",
+      "image": "/partners/KinectPRO.png",
+      "url": "http://kinect.pro/"
+    },
+    {
+      "title": "Ш++",
+      "image": "/partners/sh.png",
+      "url": "http://programming.kr.ua/"
+    }
+  ]
+}

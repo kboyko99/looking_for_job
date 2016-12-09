@@ -99,7 +99,7 @@
         <ol>
             <li>
                 <div class="question">У кого есть доступ к базе данных кандидатов?</div>
-                <div class="answer">Доступ к базе данных имеют представители компаний-партнеров. Со списком партнеров вы можете ознакомиться<a href="#partners" target=""> ~здесь~ </a></div>
+                <div class="answer">Доступ к базе данных имеют представители компаний-партнеров. Со списком партнеров вы можете ознакомиться <a href="#partners" target="">здесь</a></div>
             </li>
             <li>
                 <div class="question">Как скоро я получу предложение о работе?</div>
@@ -183,25 +183,30 @@
     </a>
 </div>
 <script>
-    $.getJSON( "admin/partners.json", function( data ) {
-        var items = data["partners"];
-        var partners = [];
-        if(items.length>0)
-            partners.push("<h2 class='partners_title'>Наші партнери</h2>");
-        for(var i = 0; i<items.length; i++){
-            var name = items[i]["name"];
-            var description = items[i]["description"];
-            var image_path = items[i]["imageLink"];
-            partners.push( "<div class='partner'>"
-                + "<div class = 'partnerName'>"+name+"</div>"
-                + "<div class='partnerDescription'>"+description+"</div>"
-                + "<img class='partnerImg' src='"+image_path.slice(3)+"'>"
-                + "</div>" );
-        }
-        $( "<div/>", {
-            "class": "partners-block" ,
-            html: partners.join( "" )
-        }).appendTo( ".partners-layout" );
+  $.getJSON("./partners.json", function (data) {
+
+  })
+    .done(function (data) {
+      var base = location.href;
+      console.log(base);
+      var items = data["partners"];
+      var partners = [];
+      if (items.length > 0)
+        partners.push("<h2 class='partners_title'>Наші партнери</h2>");
+      for (var i = 0; i < items.length; i++) {
+        var name = items[i]["name"];
+        var title = items[i]["title"];
+        var url = items[i]["url"];
+        var image_path = items[i]["image"];
+        partners.push("<div class='partner'>"
+          + "<div class='partner-image-holder'><img class='partnerImg' src='" + base + "images" + image_path + "'></div>"
+          + "<div class='partnerDescription'><a href=' "+ url +"' target=_blank> " + title + "</a></div>"
+          + "</div>");
+      }
+      $("<div/>", {
+        "class": "partners-block",
+        html: partners.join("")
+      }).appendTo(".partners-layout");
     });
 </script>
 <!-- Yandex.Metrika counter -->
